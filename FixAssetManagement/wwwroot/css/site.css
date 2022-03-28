@@ -1,0 +1,65 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.create-fix-asset .form-group{
+    margin-inline: 5px;
+}
+
+.create-fix-asset .control-label{
+    margin-bottom: 5px
+}
+
+.create-fix-asset .first-six{
+    margin-bottom: 4%;
+}
+
+.create-fix-asset .create-submit{
+    width: 20%;
+}
+
+/*.desbalance .form-control{
+    height: 30px !important;
+}*/
+
+.select{
+    height: 40px;
+    width: 70%;
+}
+
+#fields{
+    margin-inline: 8px;
+}
+
+#fields>input{
+    margin-bottom:8px !important;
+    width: 100%;
+}
+
+.first-six .form-group{
+    margin-bottom: 20px;
+}
+
+.last-six .form-group {
+    margin-bottom: 20px;
+}
+
+
+.table thead,th,tr,td{
+    border: 1px solid black;
+}

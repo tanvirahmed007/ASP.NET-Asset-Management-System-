@@ -1,0 +1,187 @@
+﻿@model IEnumerable<FixAssetManagement.Models.FixAsset>
+
+
+@{
+    ViewData["Title"] = "FAMS";
+}
+
+<h1>Fix Asset Management System</h1>
+
+@await Html.PartialAsync("Create", new FixAsset());
+
+
+
+<div class="info-tables mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="card bg-primary">
+                    <button class="btn btn-primary">Total Asset</button>
+                    <h1 class="text-center">@ViewBag.Count</h1>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+                <div class="card bg-success">
+                    <button class="btn btn-success">Total Assigned Asset</button>
+                    <h1 class="text-center">0</h1>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+                <div class="card bg-secondary">
+                    <button class="btn btn-secondary">Total Unassigned Asset</button>
+                    <h1 class="text-center">0</h1>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+                <div class="card bg-warning">
+                    <button class="btn btn-warning">Total Employees</button>
+                    <h1 class="text-center">0</h1>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table">
+
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>*@
+
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUser)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.YearOfPurchase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HistoricalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specification)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccumulatedBalance)
+            </th>
+
+            
+            @*<th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HiringDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NationalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department.DepartmentName)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                </td>*@
+
+                <td>
+                    <img src="Images/@item.ImageUser" style="width:35px;height:35px;" />
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.YearOfPurchase)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.HistoricalCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchaseOrder)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specification)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccumulatedBalance)
+                </td>
+
+                
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HiringDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NationalId)
+                </td>*@
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId}) |
+                    @Html.ActionLink("Details", "Detail", new { id = item.EmployeeId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeId}) 
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
